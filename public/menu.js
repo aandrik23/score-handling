@@ -3,6 +3,7 @@ import { gameLoop, resetTimer, resetGame as resetGameState } from "./gameLoop.js
 import { setPausedAt, addPausedDuration, resetFrameTimers } from "./gameLoop.js";
 import { resetGame } from "./bomber.js";
 import { startMusic, stopMusic } from "./audio.js";
+import { inputDisabled } from "./main.js";
 
 
 let gamePaused = true;
@@ -116,6 +117,10 @@ mainMenuBtn.onclick = () => {
 
 // pause logic:
 window.addEventListener("keydown", (e) => {
+    // Don't handle pause keys if input is disabled (e.g., leaderboard showing)
+    if (inputDisabled) {
+        return;
+    }
 
     if (e.code === "Space") e.preventDefault();
 

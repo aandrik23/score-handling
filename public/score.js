@@ -1,6 +1,9 @@
 import { score } from './gameState.js';
+import { disableGameInput } from './main.js';
 
 export function endGame(won) {
+  // Disable game input so player can type in the leaderboard
+  disableGameInput();
   
   // Calculate final time from the timer display
   const timerText = document.getElementById('timer').textContent;

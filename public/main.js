@@ -6,7 +6,23 @@ import { initAudioControls } from "./audio.js";
 
 import { player } from './bomber.js';
 
+// Variable to track if input should be disabled (e.g., when leaderboard is showing)
+export let inputDisabled = false;
+
+export function disableGameInput() {
+    inputDisabled = true;
+}
+
+export function enableGameInput() {
+    inputDisabled = false;
+}
+
 window.addEventListener("keydown", (e) => {
+    // Don't capture keys if leaderboard is showing
+    if (inputDisabled) {
+        return;
+    }
+
     if (["b", "B", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "w", "a", "s", "d"].includes(e.key)) {
         e.preventDefault();
     }

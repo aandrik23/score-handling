@@ -1,4 +1,4 @@
-import { score } from './gameState.js';``
+import { score } from './gameState.js';
 
 export function endGame(won) {
   
@@ -23,7 +23,7 @@ function showPlayerNameInput(won, finalScore, timeString) {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 3000;
   `;
   // Create modal content
   const modal = document.createElement('div');
@@ -237,6 +237,9 @@ async function showScoreboard(submissionResult, overlay) {
       margin-right: 10px;
     `;
     playAgainButton.addEventListener('click', () => {
+      // Remove the overlay first
+      overlay.remove();
+      // Reload the page to restart the game completely
       window.location.reload();
     });
     buttonContainer.appendChild(playAgainButton);

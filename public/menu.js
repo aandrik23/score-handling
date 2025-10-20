@@ -1,5 +1,5 @@
 import { buildMap } from "./bomber.js";
-import { gameLoop, resetTimer } from "./gameLoop.js";
+import { gameLoop, resetTimer, resetGame as resetGameState } from "./gameLoop.js";
 import { setPausedAt, addPausedDuration, resetFrameTimers } from "./gameLoop.js";
 import { resetGame } from "./bomber.js";
 import { startMusic, stopMusic } from "./audio.js";
@@ -161,6 +161,7 @@ export function Restart() {
     cancelAnimationFrame(animationState.id);
 
     resetGame();
+    resetGameState(); // Reset the gameEnded flag
     buildMap();
 
     hideMenu();

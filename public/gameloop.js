@@ -17,6 +17,7 @@ let totalPausedTime = 0;
 
 let portSpawned = false; // track if we already spawned a port
 let levelCompleted = false; // track if level is completed
+let gameEnded = false; // track if game has ended (won or lost)
 
 
 export function ResetPort() {
@@ -24,10 +25,19 @@ export function ResetPort() {
     portSpawned = false
 }
 
+export function stopGame() {
+    gameEnded = true;
+    cancelAnimationFrame(animationState.id);
+}
+
+export function resetGame() {
+    gameEnded = false;
+}
+
 // MAIN GAMELOOP
 export function gameLoop(time) {
 
-    if (gamePaused) return; // Stop updating if paused
+    if (gamePaused || gameEnded) return; // Stop updating if paused or game ended
 
     const delta = time - lastTime;
     lastTime = time;
@@ -100,6 +110,7 @@ export function gameLoop(time) {
             if (!levelCompleted && e.el.classList.contains("port") && collision(player.bounds, e.bounds)) {
                 if (player.hasKey) {
                     levelCompleted = true;
+                    stopGame(); // Freeze the game immediately
                     stopMusic();
                     PlayLevelClearedSound();
                     loadYouWin(() => endGame(true));

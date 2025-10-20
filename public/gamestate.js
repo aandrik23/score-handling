@@ -3,6 +3,7 @@ import { player } from './bomber.js';
 import { showMainMenu } from './menu.js';
 import { loadGameOver } from './videos.js';
 import { endGame } from './score.js';
+import { stopGame } from './gameLoop.js';
 
 
 
@@ -24,6 +25,7 @@ export function playerHit() {
     if (!player.invulnerable) {
         lives--;
         if (lives <= 0) {
+            stopGame(); // Freeze the game immediately
             stopMusic();
             PlayLevelFailedSound();
             loadGameOver(() => endGame(false));

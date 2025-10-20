@@ -26,8 +26,7 @@ export function playerHit() {
         if (lives <= 0) {
             stopMusic();
             PlayLevelFailedSound();
-            loadGameOver();
-            endGame(false);
+            loadGameOver(() => endGame(false));
             // Show scoreboard even when losing
             // // we should fix this to show a proper game over screen
             // alert("Game Over!");

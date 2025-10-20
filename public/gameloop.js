@@ -102,8 +102,7 @@ export function gameLoop(time) {
                     levelCompleted = true;
                     stopMusic();
                     PlayLevelClearedSound();
-                    loadYouWin();
-                    endGame(true);
+                    loadYouWin(() => endGame(true));
                     // proceed to next level
                 }
             }

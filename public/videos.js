@@ -1,12 +1,11 @@
-export function loadGameOver() {
-
+export function loadGameOver(onEndCallback) {
     const gameContainer = document.getElementById('game');
     const rect = gameContainer.getBoundingClientRect();
 
     const video = document.createElement('video');
     video.src = './video/GameOver.mp4';
-    video.width = rect.width;   // match game container width
-    video.height = rect.height; // match game container height
+    video.width = rect.width;
+    video.height = rect.height;
     video.controls = false;
     video.autoplay = true;
     video.muted = true; // helps autoplay
@@ -18,30 +17,38 @@ export function loadGameOver() {
 
     document.body.appendChild(video);
 
-    // Remove video when finished
-    video.addEventListener('ended', () => video.remove());
+    // When video finishes
+    video.addEventListener('ended', () => {
+        video.remove();
+        if (typeof onEndCallback === 'function') {
+            onEndCallback(); // Show scoreboard after video ends
+        }
+    });
 }
 
-
-export function loadYouWin() {
+export function loadYouWin(onEndCallback) {
     const gameContainer = document.getElementById('game');
     const rect = gameContainer.getBoundingClientRect();
 
     const video = document.createElement('video');
     video.src = './video/BIM.mp4';
-    video.width = rect.width;   // match game container width
-    video.height = rect.height; // match game container height
+    video.width = rect.width;
+    video.height = rect.height;
     video.controls = false;
     video.autoplay = true;
-    video.muted = true; // helps autoplay
+    video.muted = true;
     video.style.position = 'absolute';
     video.style.top = `${rect.top}px`;
     video.style.left = `${rect.left}px`;
-    video.style.zIndex = 1000; // make sure it’s on top
-    video.style.objectFit = 'cover'; // cover the entire game area
+    video.style.zIndex = 1000;
+    video.style.objectFit = 'cover';
 
     document.body.appendChild(video);
 
-    // Remove video when finished
-    video.addEventListener('ended', () => video.remove());
+    video.addEventListener('ended', () => {
+        video.remove();
+        if (typeof onEndCallback === 'function') {
+            onEndCallback();
+        }
+    });
 }

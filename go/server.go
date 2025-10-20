@@ -30,7 +30,8 @@ func main() {
 	// File server
 	scoreHandler := initScoreboardAPI()
 	mux := http.NewServeMux()
-	mux.Handle("/api/scores/", scoreHandler)
+	// Handle both /api/scores and /api/scores/
+	mux.HandleFunc("/api/scores", scoreHandler.ServeHTTP)
 	fs := http.FileServer(http.Dir(*dir))
 	mux.Handle("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// light security headers

@@ -2,6 +2,7 @@ import { PlayerHitSound, PlayLevelFailedSound, stopMusic } from './audio.js';
 import { player } from './bomber.js';
 import { showMainMenu } from './menu.js';
 import { loadGameOver } from './videos.js';
+import { endGame } from './score.js';
 
 
 
@@ -26,7 +27,8 @@ export function playerHit() {
             stopMusic();
             PlayLevelFailedSound();
             loadGameOver();
-            showMainMenu();
+            endGame(false);
+            // Show scoreboard even when losing
             // // we should fix this to show a proper game over screen
             // alert("Game Over!");
             // window.location.reload();

@@ -96,7 +96,7 @@ export function gameLoop(time) {
 
             }
 
-            // if it’s the port
+            // if it's the port
             if (!levelCompleted && e.el.classList.contains("port") && collision(player.bounds, e.bounds)) {
                 if (player.hasKey) {
                     levelCompleted = true;
@@ -106,7 +106,6 @@ export function gameLoop(time) {
                     endGame(true);
                     // proceed to next level
                 }
-                showMainMenu();
             }
         }
 

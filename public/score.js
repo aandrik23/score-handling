@@ -1,13 +1,10 @@
+import { score } from './gameState.js';``
+
 export function endGame(won) {
-  // Stop the game loop by setting gameEnded flag
-  gameEnded = true;
-  window.gameEnded = true;
   
-  // Calculate final time
-  const elapsed = Math.floor((performance.now() - startTime) / 1000);
-  const minutes = Math.floor(elapsed / 60);
-  const seconds = elapsed % 60;
-  const timeString = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  // Calculate final time from the timer display
+  const timerText = document.getElementById('timer').textContent;
+  const timeString = timerText.replace('Time: ', '');
   
   // Show player name input and scoreboard
   showPlayerNameInput(won, score, timeString);

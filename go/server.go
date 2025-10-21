@@ -16,8 +16,8 @@ import (
 )
 
 func main() {
-	addr := flag.String("addr", "0.0.0.0:8000", "address to listen on")
-	dir := flag.String("dir", ".", "directory to serve")
+	addr := flag.String("addr", ":8000", "address to listen on")
+	dir := flag.String("dir", "../public", "directory to serve")
 	dev := flag.Bool("dev", false, "disable caching (for local dev)")
 	cors := flag.String("cors", "", "value for Access-Control-Allow-Origin (empty to disable)")
 	flag.Parse()

@@ -1,6 +1,6 @@
 import { Player, Enemy, Tile, PowerUp } from "./classes.js";
-import { resetFrameTimers, ResetPort, resetTimer } from "./gameLoop.js";
-import { resetStats } from "./gameState.js";
+import { resetFrameTimers, ResetPort, resetTimer } from "./gameloop.js";
+import { resetStats } from "./gamestate.js";
 import { hideMenu, Restart } from "./menu.js";
 
 

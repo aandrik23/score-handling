@@ -1,5 +1,5 @@
 import { entities, player } from "./bomber.js";
-import { addScore, lives, score, playerHit } from "./gameState.js";
+import { addScore, lives, score, playerHit } from "./gamestate.js";
 import { Player, Bomb, PowerUp, Explosion, Enemy, Objective } from "./classes.js";
 import { tileMap2D } from "./bomber.js";
 import { gamePaused, animationState, showMainMenu } from "./menu.js";

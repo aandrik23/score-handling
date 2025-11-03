@@ -1,9 +1,10 @@
 import { buildMap } from "./bomber.js";
-import { gameLoop, resetTimer, resetGame as resetGameState } from "./gameLoop.js";
-import { setPausedAt, addPausedDuration, resetFrameTimers } from "./gameLoop.js";
+import { gameLoop, resetTimer, resetGame as resetGameState } from "./gameloop.js";
+import { setPausedAt, addPausedDuration, resetFrameTimers } from "./gameloop.js";
 import { resetGame } from "./bomber.js";
 import { startMusic, stopMusic } from "./audio.js";
 import { inputDisabled } from "./main.js";
+import { showScoreboard } from "./score.js";
 
 
 let gamePaused = true;
@@ -19,7 +20,11 @@ const pauseMenu = document.getElementById("pauseMenu");
 const startBtn = document.getElementById("startBtn");
 const infoBtn = document.getElementById("infoBtn");
 const settingsBtn = document.getElementById("settingsBtn");
+const highScoreBtn = document.getElementById("highScoreBtn");
 const quitBtn = document.getElementById("quitBtn");
+
+// Debug: Check if highScoreBtn exists
+console.log("highScoreBtn element:", highScoreBtn);
 
 //PAUSE MENU
 const continueBtn = document.getElementById("continueBtn");
@@ -95,6 +100,33 @@ settingsPauseBtn.onclick = () => {
 backBtn.onclick = () => {
     settingsMenu.style.display = "none";   // hide settings menu    // show main menu again
 };
+
+if (highScoreBtn) {
+    highScoreBtn.onclick = async () => {
+        console.log('High Score button clicked!');
+        
+        // Create overlay for scoreboard
+        const overlay = document.createElement('div');
+        overlay.id = 'gameEndOverlay';
+        document.body.appendChild(overlay);
+        
+        console.log('Overlay created and added to DOM:', overlay);
+        
+        try {
+            // Show scoreboard
+            console.log('Calling showScoreboard...');
+            await showScoreboard(null, overlay, true); // Pass true to indicate it's from menu
+            console.log('Scoreboard displayed successfully');
+        } catch (error) {
+            console.error('Error opening scoreboard:', error);
+            overlay.remove();
+            alert('Failed to load high scores. Please try again.');
+        }
+    };
+    console.log('High Score button onclick handler registered');
+} else {
+    console.error('High Score button not found!');
+}
 
 quitBtn.onclick = () => {
     window.close();

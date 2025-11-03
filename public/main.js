@@ -1,4 +1,4 @@
-import { gameLoop } from "./gameLoop.js";
+import { gameLoop } from "./gameloop.js";
 import { buildMap } from "./bomber.js";
 import { showMainMenu } from "./menu.js";
 import { initAudioControls } from "./audio.js";

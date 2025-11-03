@@ -1,4 +1,4 @@
-import { score } from './gameState.js';
+import { score } from './gamestate.js';
 import { disableGameInput } from './main.js';
 
 export function endGame(won) {
@@ -111,12 +111,15 @@ async function submitScore(name, score, time, overlay) {
   }
 }
 
-async function showScoreboard(submissionResult, overlay) {
+export async function showScoreboard(submissionResult, overlay, fromMenu = false) {
+  console.log('showScoreboard called with fromMenu:', fromMenu);
   try {
     overlay.innerHTML = '';
+    console.log('Overlay cleared, creating modal...');
 
     const modal = document.createElement('div');
     modal.className = 'scoreboard-modal';
+    console.log('Modal created with class:', modal.className);
 
     const title = document.createElement('h2');
     title.textContent = 'Scoreboard';
@@ -170,24 +173,27 @@ async function showScoreboard(submissionResult, overlay) {
     }
 
     const buttonContainer = document.createElement('div');
-    const playAgainButton = document.createElement('button');
-    playAgainButton.className = 'play-again-btn';
-    playAgainButton.textContent = 'Play Again';
-    playAgainButton.addEventListener('click', () => {
+    const closeButton = document.createElement('button');
+    closeButton.className = 'play-again-btn';
+    closeButton.textContent = fromMenu ? 'Close' : 'Play Again';
+    closeButton.addEventListener('click', () => {
       overlay.remove();
-      window.location.reload();
+      if (!fromMenu) {
+        window.location.reload();
+      }
     });
 
-    buttonContainer.appendChild(playAgainButton);
+    buttonContainer.appendChild(closeButton);
     modal.appendChild(buttonContainer);
     overlay.appendChild(modal);
+    console.log('Modal appended to overlay. Overlay should now be visible.');
   } catch (error) {
     console.error('Error loading scoreboard:', error);
     overlay.innerHTML = `
       <div class="scoreboard-modal">
         <h2>Error Loading Scoreboard</h2>
         <p>Unable to load scores at this time.</p>
-        <button class="play-again-btn" onclick="window.location.reload()">Play Again</button>
+        <button class="play-again-btn" onclick="this.parentElement.parentElement.remove()">Close</button>
       </div>
     `;
   }

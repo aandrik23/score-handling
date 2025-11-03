@@ -3,7 +3,7 @@ import { player } from './bomber.js';
 import { showMainMenu } from './menu.js';
 import { loadGameOver } from './videos.js';
 import { endGame } from './score.js';
-import { stopGame } from './gameLoop.js';
+import { stopGame } from './gameloop.js';
 
 
 

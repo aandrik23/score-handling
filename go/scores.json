@@ -6,64 +6,64 @@
     "time": "0:51"
   },
   {
-    "name": "andrew",
+    "name": "mmm",
     "rank": 2,
+    "score": 560,
+    "time": "0:45"
+  },
+  {
+    "name": "andrew",
+    "rank": 3,
     "score": 430,
     "time": "0:44"
   },
   {
     "name": "13123q",
-    "rank": 3,
+    "rank": 4,
     "score": 305,
     "time": "0:32"
   },
   {
     "name": "wsadrwre",
-    "rank": 4,
+    "rank": 5,
     "score": 230,
     "time": "0:29"
   },
   {
+    "name": "trsedgfc",
+    "rank": 6,
+    "score": 145,
+    "time": "0:30"
+  },
+  {
     "name": "afroditi",
-    "rank": 5,
+    "rank": 7,
     "score": 130,
     "time": "0:20"
   },
   {
     "name": "andrew",
-    "rank": 6,
+    "rank": 8,
     "score": 115,
     "time": "0:24"
   },
   {
     "name": "kjdgnhikjdfg dfgdfg",
-    "rank": 7,
+    "rank": 9,
     "score": 15,
     "time": "0:14"
   },
   {
-    "name": "jhjhhjojoijoilkj",
-    "rank": 8,
-    "score": 0,
-    "time": "0:10"
-  },
-  {
-    "name": "ljuhhgyfhgcv",
-    "rank": 9,
-    "score": 0,
-    "time": "1:09"
-  },
-  {
-    "name": "nre",
+    "name": "andrew",
     "rank": 10,
     "score": 0,
-    "time": "0:17"
+    "time": "0:20"
   },
   {
-    "name": "rhhhg",
+    "name": "hu",
     "rank": 11,
     "score": 0,
-    "time": "0:12"
+    "time": "0:11"
   },
   {
     "name": "wwadas acasdcasd",
@@ -72,10 +72,10 @@
     "time": "0:11"
   },
   {
-    "name": "andrew",
+    "name": "hello",
     "rank": 13,
     "score": 0,
-    "time": "0:20"
+    "time": "0:11"
   },
   {
     "name": "ggrtghrt",
@@ -90,16 +90,16 @@
     "time": "0:52"
   },
   {
-    "name": "hello",
+    "name": "nre",
     "rank": 16,
     "score": 0,
-    "time": "0:11"
+    "time": "0:17"
   },
   {
-    "name": "hu",
+    "name": "ljuhhgyfhgcv",
     "rank": 17,
     "score": 0,
-    "time": "0:11"
+    "time": "1:09"
   },
   {
     "name": "tgrtrth",
@@ -128,6 +128,18 @@
   {
     "name": "awdasd",
     "rank": 22,
+    "score": 0,
+    "time": "0:12"
+  },
+  {
+    "name": "jhjhhjojoijoilkj",
+    "rank": 23,
+    "score": 0,
+    "time": "0:10"
+  },
+  {
+    "name": "rhhhg",
+    "rank": 24,
     "score": 0,
     "time": "0:12"
   }

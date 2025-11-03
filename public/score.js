@@ -112,18 +112,14 @@ async function submitScore(name, score, time, overlay) {
 }
 
 export async function showScoreboard(submissionResult, overlay, fromMenu = false) {
-  console.log('showScoreboard called with fromMenu:', fromMenu);
   try {
     overlay.innerHTML = '';
-    console.log('Overlay cleared, creating modal...');
 
     const modal = document.createElement('div');
     modal.className = 'scoreboard-modal';
-    console.log('Modal created with class:', modal.className);
 
     const title = document.createElement('h2');
-    title.textContent = 'Scoreboard';
-    title.style.color = '#4CAF50';
+    title.textContent = 'High Scores';
     modal.appendChild(title);
 
     // Show submission message if available
@@ -186,7 +182,6 @@ export async function showScoreboard(submissionResult, overlay, fromMenu = false
     buttonContainer.appendChild(closeButton);
     modal.appendChild(buttonContainer);
     overlay.appendChild(modal);
-    console.log('Modal appended to overlay. Overlay should now be visible.');
   } catch (error) {
     console.error('Error loading scoreboard:', error);
     overlay.innerHTML = `

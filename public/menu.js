@@ -23,9 +23,6 @@ const settingsBtn = document.getElementById("settingsBtn");
 const highScoreBtn = document.getElementById("highScoreBtn");
 const quitBtn = document.getElementById("quitBtn");
 
-// Debug: Check if highScoreBtn exists
-console.log("highScoreBtn element:", highScoreBtn);
-
 //PAUSE MENU
 const continueBtn = document.getElementById("continueBtn");
 const restartBtn = document.getElementById("restartBtn");
@@ -103,29 +100,20 @@ backBtn.onclick = () => {
 
 if (highScoreBtn) {
     highScoreBtn.onclick = async () => {
-        console.log('High Score button clicked!');
-        
         // Create overlay for scoreboard
         const overlay = document.createElement('div');
         overlay.id = 'gameEndOverlay';
         document.body.appendChild(overlay);
         
-        console.log('Overlay created and added to DOM:', overlay);
-        
         try {
             // Show scoreboard
-            console.log('Calling showScoreboard...');
             await showScoreboard(null, overlay, true); // Pass true to indicate it's from menu
-            console.log('Scoreboard displayed successfully');
         } catch (error) {
             console.error('Error opening scoreboard:', error);
             overlay.remove();
             alert('Failed to load high scores. Please try again.');
         }
     };
-    console.log('High Score button onclick handler registered');
-} else {
-    console.error('High Score button not found!');
 }
 
 quitBtn.onclick = () => {

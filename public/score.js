@@ -86,7 +86,7 @@ function showPlayerNameInput(won, finalScore, timeString) {
 
 async function submitScore(name, score, time, overlay) {
   try {
-    const response = await fetch('/api/scores', {
+    const response = await fetch('api/scores', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -129,8 +129,8 @@ export async function showScoreboard(submissionResult, overlay, fromMenu = false
       message.textContent = submissionResult.message;
       modal.appendChild(message);
     }
-
-    const response = await fetch('/api/scores');
+    
+    const response = await fetch('api/scores');
     const data = await response.json();
 
     if (data.scores && data.scores.length > 0) {

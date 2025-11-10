@@ -1,78 +1,78 @@
 [
   {
-    "name": "kjhnkjhnj",
+    "name": "andreas",
     "rank": 1,
+    "score": 1040,
+    "time": "1:14"
+  },
+  {
+    "name": "kjhnkjhnj",
+    "rank": 2,
     "score": 920,
     "time": "0:51"
   },
   {
     "name": "mmm",
-    "rank": 2,
+    "rank": 3,
     "score": 560,
     "time": "0:45"
   },
   {
     "name": "andrew",
-    "rank": 3,
+    "rank": 4,
     "score": 430,
     "time": "0:44"
   },
   {
     "name": "13123q",
-    "rank": 4,
+    "rank": 5,
     "score": 305,
     "time": "0:32"
   },
   {
     "name": "wsadrwre",
-    "rank": 5,
+    "rank": 6,
     "score": 230,
     "time": "0:29"
   },
   {
     "name": "trsedgfc",
-    "rank": 6,
+    "rank": 7,
     "score": 145,
     "time": "0:30"
   },
   {
     "name": "afroditi",
-    "rank": 7,
+    "rank": 8,
     "score": 130,
     "time": "0:20"
   },
   {
     "name": "andrew",
-    "rank": 8,
+    "rank": 9,
     "score": 115,
     "time": "0:24"
   },
   {
     "name": "kjdgnhikjdfg dfgdfg",
-    "rank": 9,
+    "rank": 10,
     "score": 15,
     "time": "0:14"
   },
   {
-    "name": "andrew",
-    "rank": 10,
-    "score": 0,
-    "time": "0:20"
-  },
-  {
-    "name": "hu",
+    "name": "hello",
     "rank": 11,
     "score": 0,
     "time": "0:11"
   },
   {
-    "name": "wwadas acasdcasd",
+    "name": "tgrtrth",
     "rank": 12,
     "score": 0,
-    "time": "0:11"
+    "time": "0:21"
   },
   {
-    "name": "hello",
+    "name": "hu",
     "rank": 13,
     "score": 0,
     "time": "0:11"
@@ -102,10 +102,10 @@
     "time": "1:09"
   },
   {
-    "name": "tgrtrth",
+    "name": "wwadas acasdcasd",
     "rank": 18,
     "score": 0,
-    "time": "0:21"
+    "time": "0:11"
   },
   {
     "name": "hello",
@@ -142,5 +142,11 @@
     "rank": 24,
     "score": 0,
     "time": "0:12"
+  },
+  {
+    "name": "andrew",
+    "rank": 25,
+    "score": 0,
+    "time": "0:20"
   }
 ]
